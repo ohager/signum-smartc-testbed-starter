@@ -1,0 +1,33 @@
+{
+  "name": "signum-smartc-testbed-starter",
+  "version": "1.0.0",
+  "description": "Starter Project for Signum Smart Contract Development using TDD",
+  "scripts": {
+    "test": "vitest run --single-thread",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohager/signum-smartc-testbed-starter.git"
+  },
+  "keywords": [
+    "signum",
+    "blockchain",
+    "smart",
+    "contracts",
+    "smartc",
+    "web3"
+  ],
+  "author": "ohager",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "signum-smartc-testbed": "^0.0.5",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "bugs": {
+    "url": "https://github.com/ohager/signum-smartc-testbed-starter/issues"
+  },
+  "homepage": "https://github.com/ohager/signum-smartc-testbed-starter#readme"
+}
