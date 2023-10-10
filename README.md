@@ -136,6 +136,8 @@ Inside a contracts folder you should have:
 With VSCode or WebStorm it's pretty straightforward. Inside your test suite set break points and run the test in Debug Mode. You should then get access
 to all internal variables.
 
+![image](https://github.com/ohager/signum-smartc-testbed-starter/assets/3920663/0b3e54f6-8e60-4768-8830-7521af04ad12)
+
 > Note: If you want to debug the SmartC Code itself, you need to use the SmartC Simulator IDE. It's not possible to debug the contract within the IDEs (yet).
 
 
