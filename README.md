@@ -2,6 +2,8 @@
 
 Starter Project for developing Signum Smart Contracts with [SmartC](https://github.com/deleterium/SmartC) using TDD
 
+> Note: this project is still in an early development phase, but used for real world projects already. There might be changes in the interface, but the basic functionality is pretty stable already.
+
 ## Motivation
 
 Developing Smart Contracts requires some additional caution, as 1) contracts cannot be changed once in production, 2) can involve significant costs when something fails.
