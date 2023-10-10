@@ -39,7 +39,7 @@ Use this project either as a template for your own github repository. Or use `ti
 
 `npx tiged git@github.com:ohager/signum-smartc-testbed-starter.git <your-project-folder>`
 
-Then run `npm install` to set up all dependencies.
+Then go into `<your-project-folder>` and run `npm install` to set up all dependencies.
 
 Running `npm test` should run the test suite for the `sample-contract` and you should see something like this:
 
