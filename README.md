@@ -17,8 +17,19 @@ Having [NodeJS](https://nodejs.org/en/download) 18+ installed
 
 It's recommended to use `nvm` to install/manage different NodeJS versions on your computer.
 
-Windows: https://github.com/coreybutler/nvm-windows
-Linux/MacOS: https://github.com/nvm-sh/nvm
+- Windows: https://github.com/coreybutler/nvm-windows
+- Linux/MacOS: https://github.com/nvm-sh/nvm
+
+
+## How does it work?
+
+This project uses the [Signum SmartC Testbed](https://github.com/ohager/signum-smartc-testbed) package and [Vitest Test Runner](https://vitest.dev/).
+The Testbed uses the isolated [SmartC Simulator](https://www.npmjs.com/package/smartc-signum-simulator) under the hood. 
+Using the testbed, one can load a contract, initialize it and entirely interact with it (see [Testbed API](https://ohager.github.io/signum-smartc-testbed/index.html)).
+The testbed simulates all blockchain transactions, gives access to internal data structures (memory stack, maps etc) of the contract and complete control over 
+the entire environment - No own Blockchain Node needed, no costs involved.   
+
+Note, that it's not possible (yet) to debug the SmartC code directly (use the [SmartC Simulator](https://deleterium.info/sc-simulator/) instead)   
 
 ## How to use?
 
@@ -123,6 +134,6 @@ Inside a contracts folder you should have:
 With VSCode or WebStorm it's pretty straightforward. Inside your test suite set break points and run the test in Debug Mode. You should then get access
 to all internal variables.
 
-
-
 > Note: If you want to debug the SmartC Code itself, you need to use the SmartC Simulator IDE. It's not possible to debug the contract within the IDEs (yet).
+
+
