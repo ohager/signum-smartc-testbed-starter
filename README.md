@@ -27,7 +27,7 @@ This project uses the [Signum SmartC Testbed](https://github.com/ohager/signum-s
 The Testbed uses the isolated [SmartC Simulator](https://www.npmjs.com/package/smartc-signum-simulator) under the hood. 
 Using the testbed, one can load a contract, initialize it and entirely interact with it (see [Testbed API](https://ohager.github.io/signum-smartc-testbed/index.html)).
 The testbed simulates all blockchain transactions, gives access to internal data structures (memory stack, maps etc) of the contract and complete control over 
-the entire environment - No own Blockchain Node needed, no costs involved.   
+the entire environment - __No own Blockchain Node needed, no costs involved__.   
 
 Note, that it's not possible (yet) to debug the SmartC code directly (use the [SmartC Simulator](https://deleterium.info/sc-simulator/) instead)   
 
