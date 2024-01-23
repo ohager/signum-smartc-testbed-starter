@@ -7,7 +7,10 @@ export const ForwardPercentage: UserTransactionObj[] = [
         amount: 10_2000_0000n,
         sender: Context.SenderAccount1,
         recipient: Context.ThisContract,
-        messageHex: asHexMessage([Context.Methods.ForwardPercentage, Context.SenderAccount2]),
+        messageHex: asHexMessage([
+            Context.Methods.ForwardPercentage,
+            Context.SenderAccount2
+        ]),
     },
     {
         blockheight: 2,
