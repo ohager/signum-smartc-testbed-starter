@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Starter Project for Signum Smart Contract Development using TDD",
   "scripts": {
-    "test": "vitest run --single-thread",
+    "test": "vitest run",
     "prepare": "husky install"
   },
   "repository": {
@@ -21,10 +21,11 @@
   "author": "ohager",
   "license": "Apache-2.0",
   "devDependencies": {
-    "husky": "^8.0.0",
-    "signum-smartc-testbed": "^0.0.5",
-    "typescript": "^5.2.2",
-    "vitest": "^0.34.6"
+    "@types/node": "^18.19.33",
+    "husky": "^9.0.11",
+    "signum-smartc-testbed": "^1.0.4",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   },
   "bugs": {
     "url": "https://github.com/ohager/signum-smartc-testbed-starter/issues"

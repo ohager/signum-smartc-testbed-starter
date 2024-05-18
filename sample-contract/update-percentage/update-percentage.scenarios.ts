@@ -1,36 +1,36 @@
 import {Context} from '../context';
-import {asHexMessage, UserTransactionObj} from 'signum-smartc-testbed';
+import {TransactionObj} from 'signum-smartc-testbed';
 
-export const UpdatePercentage: UserTransactionObj[] = [
+export const UpdatePercentage: TransactionObj[] = [
     {
         blockheight: 2,
         amount: 2000_0000n,
         sender: Context.CreatorAccount,
         recipient: Context.ThisContract,
-        messageHex: asHexMessage([Context.Methods.UpdatePercentage, 50n]),
+        messageArr: [Context.Methods.UpdatePercentage, 50n]
     },
     {
         blockheight: 4,
         amount: 10_2000_0000n,
         sender: Context.SenderAccount1,
         recipient: Context.ThisContract,
-        messageHex: asHexMessage([Context.Methods.ForwardPercentage, Context.SenderAccount2]),
+        messageArr: [Context.Methods.ForwardPercentage, Context.SenderAccount2],
     },
 ]
 
-export const UpdatePercentageNotAllowed: UserTransactionObj[] = [
+export const UpdatePercentageNotAllowed: TransactionObj[] = [
     {
         blockheight: 2,
         amount: 2000_0000n,
         sender: Context.SenderAccount1,
         recipient: Context.ThisContract,
-        messageHex: asHexMessage([Context.Methods.UpdatePercentage, 50n]),
+        messageArr: [Context.Methods.UpdatePercentage, 50n],
     },
     {
         blockheight: 4,
         amount: 10_2000_0000n,
         sender: Context.SenderAccount1,
         recipient: Context.ThisContract,
-        messageHex: asHexMessage([Context.Methods.ForwardPercentage, Context.SenderAccount2]),
+        messageArr: [Context.Methods.ForwardPercentage, Context.SenderAccount2],
     },
 ]

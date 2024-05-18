@@ -6,9 +6,9 @@ import {PullFunds, PullFundsNotAllowed} from './pull-funds.scenarios';
 
 describe('Sample Contract - Pull Funds', () => {
     test('should pull funds correctly', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(PullFunds)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(PullFunds);
+            .runScenario();
         const transactions = testbed.getTransactions();
         expect(transactions[3]).toMatchObject({
             recipient: Context.CreatorAccount,
@@ -23,7 +23,7 @@ describe('Sample Contract - Pull Funds', () => {
             ]
         })
         expect(transactions[7]).toMatchObject({
-            amount: 7770_0000n,
+            amount: 7810_0000n,
             recipient: Context.CreatorAccount
         })
 
@@ -40,9 +40,9 @@ describe('Sample Contract - Pull Funds', () => {
         ]);
     })
     test('should not allow to pull funds', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(PullFundsNotAllowed)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(PullFundsNotAllowed);
+            .runScenario();
         const transactions = testbed.getTransactions().filter( t => t.recipient === Context.SenderAccount1 || t.recipient === Context.CreatorAccount);
         expect(transactions).toHaveLength(0);
         expect(testbed.getAccount(Context.ThisContract)!.balance).toBe(3000_0000n);

@@ -5,7 +5,7 @@
 #pragma maxAuxVars 3
 #pragma verboseAssembly
 #pragma optimizationLevel 3
-#pragma version 2.1.1
+#pragma version 2.2.1
 
 // Magic codes for methods
 #define FORWARD_PERCENTAGE 1
@@ -19,7 +19,10 @@ long percentage;
 
 // This line is used by the test bed initialization
 // see also: https://ohager.github.io/signum-smartc-testbed/classes/SimulatorTestbed.html
-// <TESTBED_INIT:percentage>
+#ifdef TESTBED
+   const percentage = TESTBED_percentage;
+#endif
+
 
 // INTERNALS
 struct TXINFO {

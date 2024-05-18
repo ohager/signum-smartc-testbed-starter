@@ -5,9 +5,9 @@ import {ForwardPercentage} from './forward-percentage.scenarios';
 
 describe('Sample Contract - Forward Percentage', () => {
     test('should forward percentage as expected - 20%', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(ForwardPercentage)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(ForwardPercentage);
+            .runScenario();
         const outgoingTxs = testbed.getTransactions().filter( t => t.sender === Context.ThisContract)
         expect(outgoingTxs).toHaveLength(2)
         expect(outgoingTxs[0]).toMatchObject({
@@ -20,9 +20,9 @@ describe('Sample Contract - Forward Percentage', () => {
         })
     })
     test('should forward percentage as expected - 33%', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(ForwardPercentage)
             .loadContract(Context.ContractPath, {percentage: 33})
-            .runScenario(ForwardPercentage);
+            .runScenario();
         const outgoingTxs = testbed.getTransactions().filter( t => t.sender === Context.ThisContract)
         expect(outgoingTxs).toHaveLength(2)
         expect(outgoingTxs[0]).toMatchObject({
@@ -35,9 +35,9 @@ describe('Sample Contract - Forward Percentage', () => {
         })
     })
     test('should forward percentage as expected - 100%', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(ForwardPercentage)
             .loadContract(Context.ContractPath, {percentage: 100})
-            .runScenario(ForwardPercentage);
+            .runScenario();
         const outgoingTxs = testbed.getTransactions().filter( t => t.sender === Context.ThisContract)
         expect(outgoingTxs).toHaveLength(2)
         expect(outgoingTxs[0]).toMatchObject({
@@ -50,9 +50,9 @@ describe('Sample Contract - Forward Percentage', () => {
         })
     })
     test('should forward percentage as expected - 0%', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(ForwardPercentage)
             .loadContract(Context.ContractPath, {percentage: 0})
-            .runScenario(ForwardPercentage);
+            .runScenario();
         const outgoingTxs = testbed.getTransactions().filter( t => t.sender === Context.ThisContract)
         expect(outgoingTxs).toHaveLength(0)
     })

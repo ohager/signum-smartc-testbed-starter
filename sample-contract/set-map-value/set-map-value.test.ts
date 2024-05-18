@@ -5,10 +5,10 @@ import {SetMapValue} from './set-map-value.scenarios';
 
 describe('Sample Contract - Set Map Value', () => {
     test('should set map values as expected', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(SetMapValue)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(SetMapValue);
-        const maps = testbed.getMapsPerSlot();
+            .runScenario();
+        const maps = testbed.getContractMap();
         expect(maps).toEqual([
             {k1: 1n, k2: 1n, value: 1n},
             {k1: 1n, k2: 2n, value: 2n},

@@ -5,9 +5,9 @@ import {UpdatePercentage, UpdatePercentageNotAllowed} from './update-percentage.
 
 describe('Sample Contract - Update Percentage', () => {
     test('should update percentage as expected', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(UpdatePercentage)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(UpdatePercentage);
+            .runScenario();
         const percentage = testbed.getContractMemoryValue("percentage");
         expect(percentage).toBe(50n)
 
@@ -16,9 +16,9 @@ describe('Sample Contract - Update Percentage', () => {
         expect(outgoingTxs[0].amount).toBe(5_0000_0000n)
     })
     test('should not update percentage as sender is not creator', () => {
-        const testbed = SimulatorTestbed
+        const testbed = new SimulatorTestbed(UpdatePercentageNotAllowed)
             .loadContract(Context.ContractPath, {percentage: 20})
-            .runScenario(UpdatePercentageNotAllowed);
+            .runScenario();
         const percentage = testbed.getContractMemoryValue("percentage");
         expect(percentage).toBe(20n)
         const outgoingTxs = testbed.getTransactions().filter( t => t.sender === Context.ThisContract)

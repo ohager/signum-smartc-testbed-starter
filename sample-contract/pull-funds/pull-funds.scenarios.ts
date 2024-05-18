@@ -1,7 +1,7 @@
 import {Context} from '../context';
-import {asHexMessage, UserTransactionObj} from 'signum-smartc-testbed';
+import {TransactionObj} from 'signum-smartc-testbed';
 
-export const PullFunds: UserTransactionObj[] = [
+export const PullFunds: TransactionObj[] = [
     {
         blockheight: 1,
         amount: 1_0000_0000n, // charge
@@ -16,33 +16,33 @@ export const PullFunds: UserTransactionObj[] = [
         blockheight: 2,
         amount: 2000_0000n,
         sender: Context.CreatorAccount,
-        messageHex: asHexMessage([Context.Methods.PullFunds, 1n]),
+        messageArr:[Context.Methods.PullFunds, 1n],
         recipient: Context.ThisContract,
     },
     {
         blockheight: 2,
         amount: 2000_0000n,
         sender: Context.CreatorAccount,
-        messageHex: asHexMessage([Context.Methods.PullFunds, 2n]),
+        messageArr:[Context.Methods.PullFunds, 2n],
         recipient: Context.ThisContract,
     },
     {
         blockheight: 4,
         amount: 2000_0000n,
         sender: Context.CreatorAccount,
-        messageHex: asHexMessage([Context.Methods.PullFunds, 22n]),
+        messageArr: [Context.Methods.PullFunds, 22n],
         recipient: Context.ThisContract,
     },
     {
         blockheight: 6,
         amount: 2000_0000n,
         sender: Context.CreatorAccount,
-        messageHex: asHexMessage([Context.Methods.PullFunds]),
+        messageArr: [Context.Methods.PullFunds],
         recipient: Context.ThisContract,
     },
 ]
 
-export const PullFundsNotAllowed: UserTransactionObj[] = [
+export const PullFundsNotAllowed: TransactionObj[] = [
     {
         blockheight: 1,
         amount: 1000_0000n,
@@ -57,14 +57,14 @@ export const PullFundsNotAllowed: UserTransactionObj[] = [
         blockheight: 2,
         amount: 1000_0000n,
         sender: Context.SenderAccount1,
-        messageHex: asHexMessage([Context.Methods.PullFunds]),
+        messageArr: [Context.Methods.PullFunds],
         recipient: Context.ThisContract,
     },
     {
         blockheight: 2,
         amount: 1000_0000n,
         sender: Context.SenderAccount1,
-        messageHex: asHexMessage([Context.Methods.PullFunds, 1n]),
+        messageArr: [Context.Methods.PullFunds, 1n],
         recipient: Context.ThisContract,
     }
 ]
